@@ -6,7 +6,7 @@ def is_sator_square(tablet):
                 return False
     return True
 
-Test Cases:
+##Test Cases:
 
 import codewars_test as test
 from solution import is_sator_square
