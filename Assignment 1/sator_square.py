@@ -11,22 +11,17 @@ def is_sator_square(tablet):
     n=len(tablet)
     str= ""  
     str_k= ""
-    for i in range(n):
-        str += ''.join(tablet[i])
-         
     k=list(zip(*tablet))
     for i in range(n):
-        str_k += ''.join(k[i])
-        
+        str += ''.join(tablet[i])
+        str_k += ''.join(k[i])    
     main_list= list(str)
     rev_list= main_list[::-1]
     ver_list= list(str_k)
-    
     if main_list == rev_list == ver_list:
         return True
     else:
         return False
-
 
 ##Test Cases:
 
