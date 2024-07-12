@@ -1,3 +1,4 @@
+#Solution 1:
 def is_sator_square(tablet):
     n=len(tablet)
     for i in range(n):
@@ -5,6 +6,27 @@ def is_sator_square(tablet):
             if tablet[i][j] != tablet[j][i] or tablet[i][j] != tablet[n - j - 1][n - i - 1]:
                 return False
     return True
+#Solution 2:
+def is_sator_square(tablet):
+    n=len(tablet)
+    str= ""  
+    str_k= ""
+    for i in range(n):
+        str += ''.join(tablet[i])
+         
+    k=list(zip(*tablet))
+    for i in range(n):
+        str_k += ''.join(k[i])
+        
+    main_list= list(str)
+    rev_list= main_list[::-1]
+    ver_list= list(str_k)
+    
+    if main_list == rev_list == ver_list:
+        return True
+    else:
+        return False
+
 
 ##Test Cases:
 
