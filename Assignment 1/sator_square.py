@@ -21,7 +21,7 @@ def is_sator_square(tablet):
     if main_list == rev_list == ver_list:
         return True
     else:
-        return False
+        return False 
 
 ##Test Cases:
 
