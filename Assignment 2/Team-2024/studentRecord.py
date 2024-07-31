@@ -94,4 +94,25 @@ def store_student_score(self):
             else:
                 print("Invalid choice, please try again.")
 
+def calculate_average_scores(self):
+        
+        updated_rows = []
+        with open(self.csv_file, mode='r', encoding='utf-8-sig') as file:
+            csv_reader = csv.DictReader(file)
+            fieldnames = csv_reader.fieldnames + ['average']
+            for row in csv_reader:
+                english = float(row['english'])
+                maths = float(row['maths'])
+                science = float(row['science'])
+                average = (english + maths + science) / 3
+                row['average'] = round(average, 2)
+                updated_rows.append(row)
+            
+        with open(self.csv_file, mode='w', encoding='utf-8-sig', newline='') as file:
+            csv_writer = csv.DictWriter(file, fieldnames=fieldnames)
+            csv_writer.writeheader()
+            csv_writer.writerows(updated_rows)
+        print("Average scores calculated and updated successfully")
+        
+
     
